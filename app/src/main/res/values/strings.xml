@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">UnabPlus</string>
+    <string name="txt_user">Usuario</string>
+    <string name="txt_password">Contraseña</string>
+    <string name="txt_iniciar_sesion">Iniciar sesión</string>
+    <string name="txt_miembro">¿No eres miembro?</string>
+    <string name="txt_registrarse">Registrarse</string>
+</resources>
