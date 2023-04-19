@@ -5,4 +5,7 @@
     <string name="txt_iniciar_sesion">Iniciar sesión</string>
     <string name="txt_miembro">¿No eres miembro?</string>
     <string name="txt_registrarse">Registrarse</string>
+    <string name="txt_buscar">Buscar película</string>
+    <string name="txt_tendencias">Tendencias</string>
+    <string name="txt_ver_mas">Ver más</string>
 </resources>
