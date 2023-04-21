@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".SearchActivity">
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/ic_launcher_foreground"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    <EditText
+        android:id="@+id/et_search"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_buscar"
+        android:ems="10"
+        android:hint="@string/txt_buscar"
+        android:inputType="textPersonName"
+        android:paddingLeft="15dp"
+        android:paddingRight="45dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton4" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/pacific_blue"
+        app:layout_constraintBottom_toBottomOf="@+id/et_search"
+        app:layout_constraintEnd_toEndOf="@+id/et_search"
+        app:layout_constraintTop_toTopOf="@+id/et_search"
+        app:srcCompat="@drawable/buscar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_search" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

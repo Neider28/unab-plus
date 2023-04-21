@@ -8,4 +8,6 @@
     <string name="txt_buscar">Buscar película</string>
     <string name="txt_tendencias">Tendencias</string>
     <string name="txt_ver_mas">Ver más</string>
+    <string name="txt_sinopsis">Sinopsis</string>
+    <string name="txt_favoritos">Mis favoritos</string>
 </resources>

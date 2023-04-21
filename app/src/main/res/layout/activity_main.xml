@@ -77,11 +77,12 @@
     <Button
         android:id="@+id/button2"
         android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="25dp"
         android:background="@drawable/shape_button"
         android:text="@string/txt_ver_mas"
+        android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="18dp"
