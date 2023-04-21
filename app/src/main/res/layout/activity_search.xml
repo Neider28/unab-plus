@@ -13,11 +13,11 @@
         android:layout_height="40dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
-        android:background="@drawable/ic_launcher_foreground"
+        android:background="@drawable/flecha_izquierda"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        app:srcCompat="@drawable/flecha_izquierda" />
 
     <EditText
         android:id="@+id/et_search"

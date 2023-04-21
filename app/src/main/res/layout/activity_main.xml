@@ -76,16 +76,16 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="150dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="42dp"
         android:layout_marginEnd="25dp"
         android:background="@drawable/shape_button"
         android:text="@string/txt_ver_mas"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="18dp"
+        android:textSize="16dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
