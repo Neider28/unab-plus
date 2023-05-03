@@ -19,18 +19,6 @@
         app:srcCompat="@drawable/logo"
         tools:srcCompat="@drawable/logo" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="25dp"
-        android:foregroundGravity="center"
-        android:scaleType="fitCenter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/usuario" />
-
     <EditText
         android:id="@+id/editTextTextPersonName"
         android:layout_width="280dp"
@@ -75,12 +63,13 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_ver_mas"
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:layout_marginTop="42dp"
         android:layout_marginEnd="25dp"
         android:background="@drawable/shape_button"
+
         android:text="@string/txt_ver_mas"
         android:textAlignment="center"
         android:textAllCaps="false"
@@ -89,4 +78,19 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+    <ImageButton
+        android:id="@+id/ibtn_perfil"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:background="@color/black"
+        android:foregroundGravity="center"
+        android:onClick="clickPerfil"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/usuario"
+        tools:srcCompat="@drawable/usuario" />
 </androidx.constraintlayout.widget.ConstraintLayout>
