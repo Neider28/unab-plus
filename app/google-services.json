@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "345569141992",
+    "project_id": "unab-plus-android",
+    "storage_bucket": "unab-plus-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:345569141992:android:17d2a2508dc30afd4a155d",
+        "android_client_info": {
+          "package_name": "com.example.unabplus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "345569141992-kgdp2f7tdrd17lcpc2f19lubue16f9mr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBO6uXjuA-LS6Pc5nNB8uZB2IxypzhzUPo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "345569141992-kgdp2f7tdrd17lcpc2f19lubue16f9mr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
