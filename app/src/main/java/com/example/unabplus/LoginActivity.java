@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +21,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 public class LoginActivity extends AppCompatActivity {
 
     private EditText etUser, etPassword;
+    private SharedPreferences misPreferencias;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,14 @@ public class LoginActivity extends AppCompatActivity {
 
         etUser = findViewById(R.id.et_user);
         etPassword = findViewById(R.id.et_password);
+
+        misPreferencias = getSharedPreferences("unab_plus", MODE_PRIVATE);
+
+        if(misPreferencias.getBoolean("logueado", false)) {
+            Intent miIntent = new Intent(this, MainActivity.class);
+            startActivity(miIntent);
+            finish();
+        }
     }
 
     public void clickIniciarSesion(View view) {
@@ -46,6 +56,9 @@ public class LoginActivity extends AppCompatActivity {
                             if (getPerfil.getPassword().equals(etPassword.getText().toString())) {
                                 Intent miIntent = new Intent(LoginActivity.this, MainActivity.class);
                                 startActivity(miIntent);
+                                SharedPreferences.Editor miEditor = misPreferencias.edit();
+                                miEditor.putBoolean("logueado", true);
+                                miEditor.apply();
                             } else {
                                 Toast.makeText(LoginActivity.this, "Contraseña incorrecta", Toast.LENGTH_SHORT).show();
                             }
