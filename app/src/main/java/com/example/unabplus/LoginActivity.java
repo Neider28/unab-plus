@@ -58,7 +58,9 @@ public class LoginActivity extends AppCompatActivity {
                                 startActivity(miIntent);
                                 SharedPreferences.Editor miEditor = misPreferencias.edit();
                                 miEditor.putBoolean("logueado", true);
+                                miEditor.putString("usuario", etUser.getText().toString());
                                 miEditor.apply();
+                                finish();
                             } else {
                                 Toast.makeText(LoginActivity.this, "Contraseña incorrecta", Toast.LENGTH_SHORT).show();
                             }
