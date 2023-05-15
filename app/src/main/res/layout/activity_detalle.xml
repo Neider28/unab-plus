@@ -1,50 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="vertical"
     android:layout_height="match_parent"
-    tools:context=".DetalleActivity">
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="0dp"
-        android:layout_height="225dp"
-        android:scaleType="fitCenter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher_background" />
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="200dp"
-        android:background="@drawable/shape_container"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView5"
-        app:layout_constraintVertical_bias="0.0">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:paddingBottom="30dp"
+        tools:context=".DetalleActivity">
+
+        <ImageView
+            android:id="@+id/iv_movie_detalle"
+            android:layout_width="150dp"
+            android:layout_height="225dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_launcher_background" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/tv_titulo_detalle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="30dp"
             android:layout_marginEnd="30dp"
             android:text="TextView"
             android:textColor="@color/white"
             android:textSize="25dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_movie_detalle"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/tv_puntaje_detalle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
@@ -54,17 +51,17 @@
             android:textSize="16dp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/imageView6"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_titulo_detalle" />
 
         <ImageView
             android:id="@+id/imageView6"
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:layout_marginStart="30dp"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="20dp"
             android:scaleType="fitCenter"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintStart_toEndOf="@+id/iv_movie_detalle"
+            app:layout_constraintTop_toBottomOf="@+id/tv_titulo_detalle"
             app:srcCompat="@drawable/estrella_rellena" />
 
         <TextView
@@ -72,16 +69,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:text="@string/txt_sinopsis"
-            android:textColor="@color/white"
+            android:textColor="@color/fluorescent_blue"
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+            app:layout_constraintTop_toBottomOf="@+id/iv_movie_detalle" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/tv_descripcion_detalle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
@@ -95,15 +92,73 @@
             app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/ib_favorito"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="30dp"
-            android:background="@drawable/corazon_borde"
+            android:background="@drawable/corazon_relleno"
+            android:onClick="clickFavorito"
             android:scaleType="fitCenter"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"
-            app:srcCompat="@drawable/corazon_borde" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_titulo_detalle"
+            app:srcCompat="@drawable/corazon_relleno" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_comentarios"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ib_enviar" />
+
+        <EditText
+            android:id="@+id/tv_comentario_enviar"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/shape_comment"
+            android:ems="10"
+            android:gravity="top"
+            android:hint="@string/txt_escribe"
+            android:inputType="text"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rv_categorias_detalle" />
+
+        <ImageButton
+            android:id="@+id/ib_enviar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/enviar"
+            android:onClick="clickEnviar"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_comentario_enviar"
+            app:srcCompat="@drawable/enviar"
+            tools:srcCompat="@drawable/enviar" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_categorias_detalle"
+            android:layout_width="355dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_descripcion_detalle" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

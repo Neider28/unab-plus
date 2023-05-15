@@ -62,11 +62,11 @@ public class LoginActivity extends AppCompatActivity {
                                 miEditor.apply();
                                 finish();
                             } else {
-                                Toast.makeText(LoginActivity.this, "Contraseña incorrecta", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, R.string.txt_contra_incorrecta, Toast.LENGTH_SHORT).show();
                             }
                         }
                     } else {
-                        Toast.makeText(LoginActivity.this, "Error inesperado", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, R.string.txt_ups, Toast.LENGTH_SHORT).show();
                     }
                 }
             });

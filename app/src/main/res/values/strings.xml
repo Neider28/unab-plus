@@ -10,4 +10,14 @@
     <string name="txt_ver_mas">Ver más</string>
     <string name="txt_sinopsis">Sinopsis</string>
     <string name="txt_favoritos">Mis favoritos</string>
+    <string name="txt_escribe">Escribe tu comentario...</string>
+    <string name="txt_agregado_a_favoritos">Agregado a favoritos</string>
+    <string name="txt_gracias_por_compartir_tu_opinion">Gracias por compartir tu opinión</string>
+    <string name="txt_ups">¡Ups! Algo no ha salido bien</string>
+    <string name="txt_contra_incorrecta">Contraseña incorrecta</string>
+    <string name="txt_completa_campos">Por favor, completa todos los campos</string>
+    <string name="txt_registrada">¡Felicidades! Tu cuenta ha sido registrada exitosamente</string>
+    <string name="txt_removido">Removido de favoritos</string>
+    <string name="txt_categorias">Categorías</string>
+    <string name="txt_no_resultados">No se encontraron resultados</string>
 </resources>

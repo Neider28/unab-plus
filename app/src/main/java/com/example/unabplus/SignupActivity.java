@@ -10,6 +10,9 @@ import android.widget.Toast;
 
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SignupActivity extends AppCompatActivity {
 
     private EditText etUser, etPassword;
@@ -26,13 +29,14 @@ public class SignupActivity extends AppCompatActivity {
         Perfil newPerfil = new Perfil();
         newPerfil.setUser(etUser.getText().toString());
         newPerfil.setPassword(etPassword.getText().toString());
+        newPerfil.setFavoritos(null);
         FirebaseFirestore firestore = FirebaseFirestore.getInstance();
 
         if (etUser.getText().toString().equals("") || etPassword.getText().toString().equals("")) {
-            Toast.makeText(this, "Campos incompletos", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.txt_completa_campos, Toast.LENGTH_SHORT).show();
         } else {
             firestore.collection("usuarios").add(newPerfil);
-            Toast.makeText(this, "Perfil creado", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.txt_registrada, Toast.LENGTH_SHORT).show();
             finish();
         }
     }

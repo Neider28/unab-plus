@@ -39,7 +39,7 @@ public class AdaptadorPersonalizado extends RecyclerView.Adapter<AdaptadorPerson
         return movieList.size();
     }
 
-    public void setListaProductos(ArrayList<Movie> movieList) {
+    public void setListaMovie(ArrayList<Movie> movieList) {
         this.movieList = movieList;
         notifyDataSetChanged();
     }
@@ -56,7 +56,7 @@ public class AdaptadorPersonalizado extends RecyclerView.Adapter<AdaptadorPerson
 
         public void enlazar(Movie movie) {
             Picasso.get()
-                    .load(movie.getImagen())
+                    .load(movie.getPoster())
                     .error(R.drawable.ic_launcher_foreground)
                     .into(ivMovie);
 
