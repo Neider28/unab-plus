@@ -8,6 +8,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Shader;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -25,6 +31,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Transformation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -74,8 +81,36 @@ public class DetalleActivity extends AppCompatActivity {
         tvTitulo.setText(movie.getNombre());
         tvPuntaje.setText(Float.toString(movie.getPuntaje()));
         tvDescripcion.setText(movie.getDescripcion());
+        Transformation roundedTransformationBuilder = new Transformation() {
+            @Override
+            public Bitmap transform(Bitmap source) {
+                int targetWidth = source.getWidth();
+                int targetHeight = source.getHeight();
+
+                Bitmap result = Bitmap.createBitmap(targetWidth, targetHeight, source.getConfig());
+                Canvas canvas = new Canvas(result);
+                Paint paint  = new Paint(Paint.ANTI_ALIAS_FLAG);
+                paint.setShader(new BitmapShader(source, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
+                RectF rectF = new RectF(0f, 0f, targetWidth, targetHeight);
+                float radius = targetWidth / 8f;
+                canvas.drawRoundRect(rectF, radius, radius, paint);
+
+                if (source != result) {
+                    source.recycle();
+                }
+
+                return result;
+            }
+
+            @Override
+            public String key() {
+                return "rounded";
+            }
+        };
+
         Picasso.get()
                 .load(movie.getPoster())
+                .transform(roundedTransformationBuilder)
                 .error(R.drawable.ic_launcher_background)
                 .into(ivMovie);
         cargarComentarios();

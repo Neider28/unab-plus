@@ -34,7 +34,6 @@ public class ProfileActivity extends AppCompatActivity {
     Perfil getPerfil;
 
     private List<String> favoritos;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
