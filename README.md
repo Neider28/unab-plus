@@ -1,5 +1,6 @@
 <h1 align="left"> <img src="https://i.postimg.cc/x8xRv5Ry/UnabPlus.png" alt="Unab Plus" width="305" height="170" /> </h1>
 <p align="left">An Android mobile application 📱 that displays detailed movie information such as synopsis, rating, categories, and reviews 🎥. In addition, it integrates a simple user registration to log in 👨‍💼, so that the user can add movies to his favorites list 🏆.</p>
+<p align="left"> <img src="https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black" alt="Firebase" width="120" height="30"/> <img src="https://img.shields.io/badge/Android_Studio-3DDC84?style=for-the-badge&logo=android-studio&logoColor=white" alt="Android Studio" width="160" height="30"/> </p>
 
 <h3 align="left">🔧 Characteristics:</h3>
 <ul>
